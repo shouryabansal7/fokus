@@ -1,3 +1,5 @@
 module.exports.home = function(req,res){
-    return res.end('reached the home page');
+    return res.render('home',{
+        title : "To-do List"
+    });
 }
