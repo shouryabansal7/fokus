@@ -1,3 +1,9 @@
 <body>
     <h1> Fokus <%= title %></h1>
+    <div>
+        <form action="/task-create" method="POST">
+            <input type="text" name="task" placeholder="Enter task" required>
+            <input type="submit" value="create task">
+        </form>
+    </div>
 </body>
