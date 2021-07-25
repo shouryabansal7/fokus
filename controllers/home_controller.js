@@ -11,7 +11,8 @@ module.exports.home = function(req,res){
 
 module.exports.create = function(req,res){
     Task.create({
-        task : req.body.task
+        task : req.body.task,
+        lastDate : req.body.Last_Date
     },
     function(err,newTask){
         if(err){
@@ -19,6 +20,13 @@ module.exports.create = function(req,res){
             return;
         }
 
+        return res.redirect('back');
+    });
+}
+
+module.exports.delete = function(req,res){
+    Task.findById(req.params.id,function(err,task){
+        task.remove();
         return res.redirect('back');
     });
 }
