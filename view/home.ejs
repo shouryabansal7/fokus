@@ -1,6 +1,15 @@
 <body>
     <h1> Fokus <%= title %></h1>
     <div>
+        <ul>
+            <% for(i of task_list){ %>
+                <li>
+                    <p><%= i.task %></p>
+                </li>
+            <% } %>
+        </ul>
+    </div>
+    <div>
         <form action="/task-create" method="POST">
             <input type="text" name="task" placeholder="Enter task" required>
             <input type="submit" value="create task">

@@ -1,8 +1,11 @@
 const Task = require('../models/task');
 
 module.exports.home = function(req,res){
-    return res.render('home',{
-        title : "To-do List"
+        Task.find({},function(err,tasks){
+            return res.render('home',{
+            title: 'To-do List',
+            task_list: tasks
+        });
     });
 }
 
