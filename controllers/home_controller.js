@@ -30,3 +30,15 @@ module.exports.delete = function(req,res){
         return res.redirect('back');
     });
 }
+
+module.exports.complete = function(req,res){
+    var Id = req.body.checkbox;
+    Task.findById(Id,function(err,task){
+        if(err){
+            console.log('task could not be removed');                   
+            return res.redirect('/');
+        }
+        task.remove();
+        return res.redirect('/');
+    });
+}

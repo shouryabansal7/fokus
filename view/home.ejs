@@ -4,15 +4,17 @@
         <ul>
             <% for(i of task_list){ %>
                 <li>
-                    <input type="checkbox">         
-                       <%= i.task %>
-                        <small>
-                            <p>Last Date</p>
-                            <p><%= i.lastDate %></p>
-                        </small>
-                        <small>
-                            <a href="/task-delete/<%= i.id %>">Delete Task</a>
-                        </small>
+                    <form action="/task-complete" method="POST">
+                        <input type="checkbox" name="checkbox" onChange="this.form.submit()" value="<%= i._id %>">         
+                           <%= i.task %>
+                            <small>
+                                <p>Last Date</p>
+                                <p><%= i.lastDate %></p>
+                            </small>
+                            <small>
+                                <a href="/task-delete/<%= i.id %>">Delete Task</a>
+                            </small>
+                    </form>
                 </li>
             <% } %>
         </ul>
@@ -24,4 +26,9 @@
             <input type="submit" value="create task">
         </form>
     </div>
+    <div>
+        <h1 id="greeting"></h1>
+        <h1 id="clock"></h1>
+    </div>
+    <script src="/js/clock.js"></script>
 </body>
