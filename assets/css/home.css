@@ -1,0 +1,35 @@
+#main{
+    width: 100%;
+    margin: 0;
+    padding: 2%;
+    display: flex;
+    flex-direction: row;
+}
+
+.clock-main{
+    width:60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.to-do{
+    width: 40%;
+}
+
+#greeting{
+    margin: 0;
+    font-family: sans-serif;
+    font-family: 300;
+    font-size: 2rem;
+    color: white;
+}
+
+#clock{
+    margin: 0;
+    font-family: sans-serif;
+    font-family: 350;
+    font-size: 6.5rem;
+    color: white;
+}

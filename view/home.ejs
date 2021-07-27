@@ -1,34 +1,37 @@
-<body>
-    <h1> Fokus <%= title %></h1>
-    <div>
-        <ul>
-            <% for(i of task_list){ %>
-                <li>
-                    <form action="/task-complete" method="POST">
-                        <input type="checkbox" name="checkbox" onChange="this.form.submit()" value="<%= i._id %>">         
-                           <%= i.task %>
-                            <small>
-                                <p>Last Date</p>
-                                <p><%= i.lastDate %></p>
-                            </small>
-                            <small>
-                                <a href="/task-delete/<%= i.id %>">Delete Task</a>
-                            </small>
-                    </form>
-                </li>
-            <% } %>
-        </ul>
+<link rel="stylesheet" href="/css/home.css">
+<main id="main">
+    <div class="to-do">
+        <h1> Fokus <%= title %></h1>
+        <div>
+            <ul>
+                <% for(i of task_list){ %>
+                    <li>
+                        <form action="/task-complete" method="POST">
+                            <input type="checkbox" name="checkbox" onChange="this.form.submit()" value="<%= i._id %>">         
+                            <%= i.task %>
+                                <small>
+                                    <p>Last Date</p>
+                                    <p><%= i.lastDate %></p>
+                                </small>
+                                <small>
+                                    <a href="/task-delete/<%= i.id %>">Delete Task</a>
+                                </small>
+                        </form>
+                    </li>
+                <% } %>
+            </ul>
+        </div>
+        <div>
+            <form action="/task-create" method="POST">
+                <input type="text" name="task" placeholder="Enter task" required>
+                <input type="date" name="Last_Date">
+                <input type="submit" value="create task">
+            </form>
+        </div>
     </div>
-    <div>
-        <form action="/task-create" method="POST">
-            <input type="text" name="task" placeholder="Enter task" required>
-            <input type="date" name="Last_Date">
-            <input type="submit" value="create task">
-        </form>
-    </div>
-    <div>
-        <h1 id="greeting"></h1>
+    <div class="clock-main">
         <h1 id="clock"></h1>
+        <h1 id="greeting"></h1>
     </div>
     <script src="/js/clock.js"></script>
-</body>
+</main>
