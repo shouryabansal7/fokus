@@ -1,31 +1,33 @@
 <link rel="stylesheet" href="/css/home.css">
 <main id="main">
     <div class="to-do">
-        <h1> Fokus <%= title %></h1>
-        <div>
-            <ul>
+        <h1> Fokus | <%= title %></h1>
+        <div class="display-tasks">
+            <ul class="tasks">
                 <% for(i of task_list){ %>
                     <li>
                         <form action="/task-complete" method="POST">
-                            <input type="checkbox" name="checkbox" onChange="this.form.submit()" value="<%= i._id %>">         
-                            <%= i.task %>
+                            <input type="checkbox" name="checkbox" onChange="this.form.submit()" value="<%= i._id %>" id="check">
+                            <label class="container">
+                                <%= i.task %>
                                 <small>
-                                    <p>Last Date</p>
-                                    <p><%= i.lastDate %></p>
+                                    <p>Last Date - <%= i.lastDate %></p>
                                 </small>
                                 <small>
-                                    <a href="/task-delete/<%= i.id %>">Delete Task</a>
+                                    <a href="/task-delete/<%= i.id %>" class="delete">Delete Task</a>
                                 </small>
+                            </label>
                         </form>
                     </li>
                 <% } %>
             </ul>
         </div>
         <div>
-            <form action="/task-create" method="POST">
-                <input type="text" name="task" placeholder="Enter task" required>
-                <input type="date" name="Last_Date">
-                <input type="submit" value="create task">
+            <form class="form" action="/task-create" method="POST">
+                <p>Add To-do</p>
+                <input type="text"  class="submit-form" name="task" placeholder="Enter task" required>
+                <input type="date" class="submit-form" name="Last_Date">
+                <input type="submit" class="submit-button" value="Create">
             </form>
         </div>
     </div>

@@ -6,7 +6,7 @@ body{
 }
 
 main{
-    height: 100%;
+    height: 100vh;
     width: 100%;
     background-image: url('../images/frankie-lopez-UaITS7CCnDE-unsplash.jpg');
     background-size: cover;

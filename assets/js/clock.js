@@ -12,17 +12,16 @@ function clock(){
     var name = "Shourya";
 
     //if else condition
-    midday = (hours>=12) ? "PM" : "AM";
-    document.getElementById("clock").innerHTML = hours + ":" + minutes + ":" + seconds + midday;
+    document.getElementById("clock").innerHTML = hours + ":" + minutes + ":" + seconds;
     var time = setTimeout(function () {
         clock();
     }, 1000);
     var greeting;
     if(hours<12){
         greeting = "Good Morning" + " " + name;
-    }else if(hours >= 12 && hours <= 18){
+    }else if(hours >= 12 && hours < 18){
         greeting = "Good Afternoon" + " " + name;
-    }else if(hours > 18 && hours <=24){
+    }else if(hours >= 18 && hours <=24){
         greeting = "Good Evening" + " " + name;
     }
 

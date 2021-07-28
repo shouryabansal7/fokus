@@ -16,6 +16,17 @@
 
 .to-do{
     width: 40%;
+    margin: 4%;
+    height: fit-content;
+    background-color: rgba(255,127,80,0.5);
+    border-radius: 15px;
+    padding: 0.5%;
+}
+
+.to-do h1{
+    text-align: center;
+    color: white;
+    font-family: sans-serif;
 }
 
 #greeting{
@@ -32,4 +43,100 @@
     font-family: 350;
     font-size: 6.5rem;
     color: white;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.tasks{
+    list-style: none;
+}
+
+.submit-form::-webkit-input-placeholder{
+    color: black;
+}
+
+.delete{
+    color: white;
+    font-family: sans-serif;
+    text-decoration: none;
+}
+
+.delete:hover{
+    border: 2px solid white;
+    background-color: white;
+    border-radius: 10px;
+    padding: 1px;
+    color: black;
+}
+
+.submit-form{
+    outline: none;
+    color: black;
+    margin: 1%;
+    background-color: transparent;
+    border-bottom: 2px solid white;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+}
+
+.submit-button{
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 15px;
+    padding: 1%;
+    margin: 1%;
+    font-family: sans-serif;
+}
+
+.submit-button:hover{
+    background: black;
+    border: 1px solid black;
+    color: white;
+}
+
+label{
+    font-family: 'Poppins',sans-serif;
+    font-weight: 500;
+}
+
+input[type="checkbox"]{
+    appearance: none;
+    height: 12px;
+    width: 12px;
+    background-color: white;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:hover{
+    background-color: black;
+}
+
+.form p{
+    text-align: center;
+    color: white;
+    font-family: sans-serif;
+    font-size: x-large;
+    font-weight: 600;
+    margin: 2%
+}
+
+.display-tasks{
+    height: 35vh;
+    overflow-y: scroll;
+}
+
+.display-tasks::-webkit-scrollbar{
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: white;
+    border-radius: 6px;
 }
