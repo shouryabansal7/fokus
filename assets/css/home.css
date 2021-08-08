@@ -17,7 +17,7 @@
 .to-do{
     width: 40%;
     margin: 4%;
-    height: fit-content;
+    height: 75%;
     background-color: rgba(255,127,80,0.5);
     border-radius: 15px;
     padding: 0.5%;
@@ -26,14 +26,14 @@
 .to-do h1{
     text-align: center;
     color: white;
-    font-family: sans-serif;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 #greeting{
     margin: 0;
     font-family: sans-serif;
     font-family: 300;
-    font-size: 2rem;
+    font-size: 1.3rem;
     color: white;
 }
 
@@ -41,15 +41,15 @@
     margin: 0;
     font-family: sans-serif;
     font-family: 350;
-    font-size: 6.5rem;
+    font-size: 10rem;
     color: white;
 }
 
 .form{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .tasks{
@@ -75,6 +75,8 @@
 }
 
 .submit-form{
+    height: 3rem;
+    width: 35%;
     outline: none;
     color: black;
     margin: 1%;
@@ -89,7 +91,7 @@
     background-color: white;
     border: 1px solid white;
     border-radius: 15px;
-    padding: 1%;
+    padding: 2%;
     margin: 1%;
     font-family: sans-serif;
 }
@@ -101,8 +103,9 @@
 }
 
 label{
-    font-family: 'Poppins',sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     font-weight: 500;
+    font-size: 1.3rem;
 }
 
 input[type="checkbox"]{
@@ -128,7 +131,7 @@ input[type="checkbox"]:hover{
 }
 
 .display-tasks{
-    height: 35vh;
+    height: 70%;
     overflow-y: scroll;
 }
 

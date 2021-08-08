@@ -2,17 +2,15 @@ function clock(){
     var date = new Date();
     var hours = date.getHours();
     var minutes = date.getMinutes();
-    var seconds = date.getSeconds();
     var midday;
 
     hours = updateTime(hours);
     minutes = updateTime(minutes);
-    seconds = updateTime(seconds);
 
     var name = "Shourya";
 
     //if else condition
-    document.getElementById("clock").innerHTML = hours + ":" + minutes + ":" + seconds;
+    document.getElementById("clock").innerHTML = hours + ":" + minutes;
     var time = setTimeout(function () {
         clock();
     }, 1000);
