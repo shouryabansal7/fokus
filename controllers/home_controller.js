@@ -9,19 +9,27 @@ module.exports.home = function(req,res){
     });
 }
 
-module.exports.create = function(req,res){
-    Task.create({
-        task : req.body.task,
-        lastDate : req.body.Last_Date
-    },
-    function(err,newTask){
-        if(err){
-            console.log('error in creating the task');
-            return;
+module.exports.create = async function(req,res){
+    try{
+        let task = await Task.create({
+            task : req.body.task,
+            lastDate : req.body.Last_Date
+        });
+
+        if(req.xhr){
+            return res.status(200).json({
+                data:{
+                    task: task
+                },
+                message: "TASK IS CREATED!"
+            });
         }
 
         return res.redirect('back');
-    });
+    }catch(err){
+        console.log('error in creating the task');
+        return res.redirect('back');
+    }
 }
 
 module.exports.delete = function(req,res){
