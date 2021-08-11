@@ -12,6 +12,7 @@
                 success: function(data){
                     let newTask = createNewTaskDom(data.data.task);
                     $('#tasks-list-container>ul').prepend(newTask);
+                    deleteTask($(' .delete-task-button',newTask));
                 },error: function(error) {
                     console.log(error.responseText);
                 }
@@ -38,5 +39,23 @@
                         </form>
                     </li>`);
     }
+
+    //method to delete a post from DOM
+    let deleteTask = function(deletelink){
+        $(deletelink).click(function(e){
+            e.preventDefault();
+
+            $.ajax({
+                type: 'get',
+                url: $(deletelink).prop('href'),
+                success: function(data){
+                    $(`task-${ data.data.task_id }`).remove();
+                },error: function(error){
+                    console.log(error.responseText);
+                }
+            });
+        });
+    }
+
     createTask();
 }
