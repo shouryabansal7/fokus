@@ -13,6 +13,7 @@
                     let newTask = createNewTaskDom(data.data.task);
                     $('#tasks-list-container>ul').prepend(newTask);
                     deleteTask($(' .delete-task-button',newTask));
+                    completeTask($(' .checkbox-complete',newTask));
                 },error: function(error) {
                     console.log(error.responseText);
                 }
@@ -50,6 +51,22 @@
                 url: $(deletelink).prop('href'),
                 success: function(data){
                     $(`task-${ data.data.task_id }`).remove();
+                },error: function(error){
+                    console.log(error.responseText);
+                }
+            });
+        });
+    }
+
+    let completeTask = function(completedlink){
+        $(completedlink).click(function(e){
+            e.preventDefault();
+
+            $.ajax({
+                type: 'get',
+                url: '/task-complete',
+                success: function(data){
+                    $(`task-${data.data.task_id}`).remove();
                 },error: function(error){
                     console.log(error.responseText);
                 }

@@ -57,14 +57,24 @@ module.exports.delete = async function(req,res){
     }
 }
 
-module.exports.complete = function(req,res){
-    var Id = req.body.checkbox;
-    Task.findById(Id,function(err,task){
-        if(err){
-            console.log('task could not be removed');                   
-            return res.redirect('/');
-        }
+module.exports.complete = async function(req,res){
+    try{
+        var Id = req.body.checkbox;
+        let task = await Task.findById(Id);
         task.remove();
+
+        if(req.xhr){
+            return res.status(200).json({
+                data:{
+                    task_id: Id
+                },
+                message: "Task Completed"
+            });
+        }
+
         return res.redirect('/');
-    });
+    }catch(err){
+        console.log('task could not be removed');
+        return res.redirect('/');
+    }
 }

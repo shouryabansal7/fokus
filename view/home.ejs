@@ -7,7 +7,7 @@
                 <% for(i of task_list){ %>
                     <li id="task-<% i._id %>">
                         <form action="/task-complete" method="POST">
-                            <input type="checkbox" name="checkbox" onChange="this.form.submit()" value="<%= i._id %>" id="check">
+                            <input type="checkbox" name="checkbox" onChange="this.form.submit()" value="<%= i._id %>" id="check" class="checkbox-complete">
                             <label class="container">
                                 <%= i.task %>
                                 <small>
