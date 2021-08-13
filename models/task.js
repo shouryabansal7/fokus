@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+//creating the schema for tasks and exporting that schema
 const taskSchema = new mongoose.Schema({
     task:{
         type: String,

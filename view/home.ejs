@@ -2,6 +2,7 @@
 <main id="main">
     <div class="to-do">
         <h1><%= title %></h1>
+        <!--displaying tasks in to-do list-->
         <div class="display-tasks" id="tasks-list-container">
             <ul class="tasks">
                 <% for(i of task_list){ %>
@@ -26,6 +27,7 @@
             </ul>
         </div>
         <div>
+            <!--creating tasks in to-do list-->
             <form class="form" action="/task-create" method="POST" id="new-task-form">
                 <input type="text"  class="submit-form" name="task" placeholder="Enter task" required>
                 <input type="date" class="submit-form" name="Last_Date">
@@ -34,6 +36,7 @@
         </div>
     </div>
     <div class="clock-main">
+        <!-- code for clock and greeting-->
         <h1 id="clock"></h1>
         <h1 id="greeting"></h1>
     </div>

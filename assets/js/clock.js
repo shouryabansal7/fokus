@@ -1,3 +1,4 @@
+//function to display time and greetings
 function clock(){
     var date = new Date();
     var hours = date.getHours();

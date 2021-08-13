@@ -1,4 +1,5 @@
 {
+    //ajax to create task
     let createTask = function(){
         let newTaskForm = $("#new-task-form");
     
@@ -21,6 +22,7 @@
         });
     }
 
+    //ajax method to display taks in the DOM
     let createNewTaskDom = function(task){
         return $(`<li id="task-${ i._id }">
                         <form action="/task-complete" method="POST">
@@ -58,6 +60,7 @@
         });
     }
 
+    //method to delete completed post from the DOM
     let completeTask = function(completedlink){
         $(completedlink).click(function(e){
             e.preventDefault();
@@ -74,5 +77,6 @@
         });
     }
 
+    //calling create task function
     createTask();
 }

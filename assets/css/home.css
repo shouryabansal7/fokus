@@ -1,3 +1,4 @@
+/* main */
 #main{
     width: 100%;
     margin: 0;
@@ -6,6 +7,7 @@
     flex-direction: row;
 }
 
+/*clock and greeting */ 
 .clock-main{
     width:60%;
     display: flex;
@@ -13,6 +15,27 @@
     align-items: center;
     justify-content: center;
 }
+
+/*for greetings*/
+
+#greeting{
+    margin: 0;
+    font-family: sans-serif;
+    font-family: 300;
+    font-size: 1.3rem;
+    color: white;
+}
+
+/* for clock*/
+#clock{
+    margin: 0;
+    font-family: sans-serif;
+    font-family: 350;
+    font-size: 10rem;
+    color: white;
+}
+
+/*for to do list*/
 
 .to-do{
     width: 40%;
@@ -23,55 +46,21 @@
     padding: 0.5%;
 }
 
+/* to do list heading*/
+
 .to-do h1{
     text-align: center;
     color: white;
     font-family: 'Times New Roman', Times, serif;
 }
 
-#greeting{
-    margin: 0;
-    font-family: sans-serif;
-    font-family: 300;
-    font-size: 1.3rem;
-    color: white;
-}
-
-#clock{
-    margin: 0;
-    font-family: sans-serif;
-    font-family: 350;
-    font-size: 10rem;
-    color: white;
-}
+/*form for creating new task*/
 
 .form{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
-}
-
-.tasks{
-    list-style: none;
-}
-
-.submit-form::-webkit-input-placeholder{
-    color: black;
-}
-
-.delete{
-    color: white;
-    font-family: sans-serif;
-    text-decoration: none;
-}
-
-.delete:hover{
-    border: 2px solid white;
-    background-color: white;
-    border-radius: 10px;
-    padding: 1px;
-    color: black;
 }
 
 .submit-form{
@@ -102,11 +91,48 @@
     color: white;
 }
 
+.form p{
+    text-align: center;
+    color: white;
+    font-family: sans-serif;
+    font-size: x-large;
+    font-weight: 600;
+    margin: 2%
+}
+
+.submit-form::-webkit-input-placeholder{
+    color: black;
+}
+
+/*tasks in to-do list*/
+
+.tasks{
+    list-style: none;
+}
+
+/*delete button*/
+
+.delete{
+    color: white;
+    font-family: sans-serif;
+    text-decoration: none;
+}
+
+.delete:hover{
+    border: 2px solid white;
+    background-color: white;
+    border-radius: 10px;
+    padding: 1px;
+    color: black;
+}
+
 label{
     font-family: 'Times New Roman', Times, serif;
     font-weight: 500;
     font-size: 1.3rem;
 }
+
+/*checkbox for task completion*/
 
 input[type="checkbox"]{
     appearance: none;
@@ -121,19 +147,14 @@ input[type="checkbox"]:hover{
     background-color: black;
 }
 
-.form p{
-    text-align: center;
-    color: white;
-    font-family: sans-serif;
-    font-size: x-large;
-    font-weight: 600;
-    margin: 2%
-}
+/*for displaying tasks*/
 
 .display-tasks{
     height: 70%;
     overflow-y: scroll;
 }
+
+/* adding scrollbar for overflow*/
 
 .display-tasks::-webkit-scrollbar{
     width: 12px;
@@ -142,4 +163,28 @@ input[type="checkbox"]:hover{
 ::-webkit-scrollbar-thumb{
     background-color: white;
     border-radius: 6px;
+}
+
+/*media queries*/
+
+@media screen and (max-width: 800px) {
+    #main{
+        flex-direction: column;
+    }
+
+    .clock-main{
+        margin-top: 0;
+        padding-top: 0;
+        height: 50%;
+        width: 100%;
+    }
+
+    .to-do{
+        height: 60%;
+        width: 85%;
+    }
+
+    .display-tasks{
+        height: 50%;
+    }
 }

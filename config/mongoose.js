@@ -1,5 +1,7 @@
 const  mongoose = require('mongoose');
 
+//connecting to the mongodb database
+//establishing the connection wiht mongob server
 mongoose.connect('mongodb://localhost:27017/fokus_development',{
     useNewUrlParser:true,
     useUnifiedTopology:true,

@@ -1,5 +1,6 @@
 const Task = require('../models/task');
 
+//home function to display all the task and render home page
 module.exports.home = async function(req,res){
     try{
         let tasks = await Task.find({})
@@ -15,6 +16,7 @@ module.exports.home = async function(req,res){
     }
 }
 
+//create function to create new task
 module.exports.create = async function(req,res){
     try{
         let task = await Task.create({
@@ -38,6 +40,7 @@ module.exports.create = async function(req,res){
     }
 }
 
+//delete function is used to delete task
 module.exports.delete = async function(req,res){
     try{
         let task = await Task.findById(req.params.id);
@@ -57,6 +60,7 @@ module.exports.delete = async function(req,res){
     }
 }
 
+//complete function is used to remove the completed task from database
 module.exports.complete = async function(req,res){
     try{
         var Id = req.body.checkbox;
